@@ -1,10 +1,8 @@
 const json = require('json2csv');
-
-// modules required for routing
 let express = require('express');
 let router = express.Router();
 
-// define the model
+
 let inventoryItem = require('../models/inventoryItem');
 
 router.get('/download',(req, res) => {
