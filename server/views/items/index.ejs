@@ -1,0 +1,59 @@
+<% include ../partials/header.ejs %>
+
+    <!-- MAIN CONTENT -->
+    <div class="container">
+      <div class="row">
+        <div class="col-md-offset-1 col-md-10">
+          <h3>Inventory Items </h3>
+          <a href="/items/add" class="btn btn-primary"><i class="fa fa-plus"></i> Add an item</a>
+          <br>
+          <div class="table-responsive">
+            <table class="table table-bordered table-striped table-hover">
+              <thead>
+                <tr>
+                  <th>Item Name</th>
+                  <th class="text-center">Description</th>
+                  <th class="text-center">Price per unit</th>
+                  <th class="text-center">Weight per unit</th>
+                  <th class="text-center">Available units</th>
+                  <th class="text-center"></th>
+                  <th class="text-center"></th>
+                </tr>
+                </thead>
+                <tbody>
+                <!-- Template Row -->
+                <% for (let count = 0; count < items.length; count++) { %>
+                <tr>
+                  <td><%= items[count].ItemName %></td>
+                  <td class="text-center"><%= items[count].Description %></td>
+                  <td class="text-center"><%= items[count].Price %></td>
+                  <td class="text-center"><%= items[count].Weight %></td>
+                  <td class="text-center"><%= items[count].Units %></td>
+
+                  <td class="text-center">
+                    <a href="/items/<%= items[count]._id %>" class="btn btn-primary btn-sm" title="Edit" >
+                    <i class="fa fa-edit"></i></a>
+                  </td>
+
+                  <td class="text-center">
+                    <a href="/items/delete/<%= items[count]._id %>" class="btn btn-danger btn-sm" title="Delete">
+                    <i class="fa fa-trash"></i></a>
+                  </td>
+                </tr>
+                <% } %>
+              </tbody>
+            </table>
+            <a href="/data/download" class="btn btn-primary"><i class="fa fa-download"></i> Download data</a>
+          </div>
+           <div class="col-md-offset-1 col-md-10 text-center">
+            <ul class="pagination pagination-lg pager" id="myPager"></ul>
+          </div>
+        </div>
+      </div>
+      
+    
+    </div>
+
+<% include ../partials/footer.ejs %>
+
+

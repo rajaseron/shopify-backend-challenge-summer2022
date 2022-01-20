@@ -1,0 +1,42 @@
+<% include ../partials/header.ejs %>
+
+    <!-- MAIN CONTENT -->
+    <div class="container">
+      <div class="row">
+        <div class="col-md-offset-3 col-md-6">
+          <h1><%= title %></h1>
+            <form class="form" method="post">
+              <div class="form-group">
+                <label for="NameTextField">Item Name</label>
+                <input type="text" class="form-control" id="NameTextField"
+                placeholder="" name="ItemName" value="<%= item.ItemName %>" required>
+              </div>
+              <div class="form-group">
+                <label for="DescriptionTextField">Description</label>
+                <input type="text" class="form-control" id="DescriptionTextField"
+                placeholder="" name="Description" value="<%= item.Description %>"  required>
+              </div>
+              <div class="form-group">
+                <label for="PriceTextField">Price per Unit</label>
+                <input type="text" class="form-control" id="AuthorTextField"
+                placeholder="" name="Price" value="<%= item.Price %>"  required>
+              </div>
+              <div class="form-group">
+                <label for="WeightTextField">Weight (in grams)</label>
+                <input type="text" class="form-control" id="WeightTextField"
+                placeholder="" name="Weight" value="<%= item.Weight %>"  required>
+              </div>
+              <div class="form-group">
+                <label for="UnitsTextField">Available Units</label>
+                <input type="text" class="form-control" id="UnitsTextField"
+                placeholder="" name="Units" value="<%= item.Units %>"  required>
+              </div>
+
+              <button type="submit" class="btn btn-primary"><i class="fa fa-check-square-o"></i> Submit</button>
+              <a href="/items" class="btn btn-warning"><i class="fa fa-undo"></i> Cancel</a>
+            </form>
+        </div>
+      </div>
+    </div>
+
+<% include ../partials/footer.ejs %>
